@@ -53,8 +53,8 @@ MonoBehaviour:
   point: 25
   hp: 0
   angle: 0
-  Heart: {fileID: 7243539246179855488}
-  Body: {fileID: 8166124875549561776}
+  Heart: {fileID: 404795430840099283}
+  Body: {fileID: 6586678686410133551}
   enable: 0
   area: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
@@ -259,15 +259,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69fb8a5d09544f242bcf6be042a90dc6, type: 3}
---- !u!1 &7243539246179855488 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8631326328584218947, guid: 69fb8a5d09544f242bcf6be042a90dc6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1391217567407506883}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1950732204691289980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 602635294437700287, guid: 69fb8a5d09544f242bcf6be042a90dc6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1391217567407506883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &404795430840099283 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1643961529721644048, guid: 69fb8a5d09544f242bcf6be042a90dc6,
     type: 3}
   m_PrefabInstance: {fileID: 1391217567407506883}
   m_PrefabAsset: {fileID: 0}

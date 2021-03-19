@@ -112,7 +112,6 @@ public class SCR_Area : MonoBehaviour
     public void showMSG(bool win)
     {
         StopSpawn();
-        Health.text = "Dead";
         if (win)
         {
             Message.color = Color.green;
