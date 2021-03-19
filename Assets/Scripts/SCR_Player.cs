@@ -1,32 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class SCR_Player : MonoBehaviour
+public class SCR_Player : SCR_Character
 {
     public float shootPeriod;
     public float shootSpeed;
     float oldShoot;
     public GameObject arrow;
     public float winPoint;
-    public GameObject text;
-    public GameObject text1;
     float t;
-
+    
 
     Transform Me;
-    
+
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        text1.GetComponent<Text>().text = "";
-        Me = GetComponent<SET_Params>().Body.GetComponent<Transform>();
+        base.Start();
+        area = GameObject.Find("Area").GetComponent<SCR_Area>();
+        Me = Body.GetComponent<Transform>();
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
+        area.Health.text = hp.ToString();
+        base.Update();
         //Слежка за курсором
         Vector3 MPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float MPX = MPos.x;   
@@ -41,35 +41,19 @@ public class SCR_Player : MonoBehaviour
             GameObject S = Instantiate(arrow, Me.position, Quaternion.identity);
             S.GetComponent<SCR_Arrow>().angle = angle;
             S.GetComponent<SCR_Arrow>().speed = shootSpeed;
-            S.GetComponent<SET_Params>().power = GetComponent<SET_Params>().power;
-        }
-        text.GetComponent<Text>().text = GetComponent<SET_Params>().point.ToString() + "/" + winPoint.ToString();
-        if (GetComponent<SET_Params>().point >= winPoint)
-        {
-            GameObject.Find("Area").GetComponent<SCR_Area>().StopSpawn();
-            text1.GetComponent<Text>().color = Color.green;
-            text1.GetComponent<Text>().text = "!!!YOU ARE WIN!!!";
-
-            GameObject.Find("Area").GetComponent<SCR_Area>().end = true;
+            S.GetComponent<SCR_Character>().power = power;
         }
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        
-    }
     private void OnDestroy()
     {
-        GameObject.Find("Area").GetComponent<SCR_Area>().StopSpawn();
-        text1.GetComponent<Text>().color = Color.red;
-        text1.GetComponent<Text>().text = "!!!YOU ARE DEAD!!!";
-        GameObject.Find("Area").GetComponent<SCR_Area>().end = true;
+        
+        area.showMSG(false);
     }
 
     public void addPoints (float points)
     {
-        GetComponent<SET_Params>().point += points;
-        
+        point += points;
     }
 }

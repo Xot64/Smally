@@ -244,12 +244,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPeriod: 2
   spawn: 0
-  enemy1: {fileID: 78601200539245016, guid: 60c5ee2e96c7d754f9653be036c33c59, type: 3}
-  enemy2: {fileID: 78601200539245016, guid: ea5fe2923dfa9744880483452367671e, type: 3}
-  enemy3: {fileID: 78601200539245016, guid: ed7ad31f2be38ed42ad0bc2e259c5da5, type: 3}
-  Win: {fileID: 9057539502135736615, guid: d829e63dc5fde92409228c339ba8c92d, type: 3}
-  Dead: {fileID: 9057539502135736615, guid: e00b5255db1d64f45981260ddaa5b339, type: 3}
+  player: {fileID: 1739372274}
+  zombie: {fileID: 78601200539245016, guid: 60c5ee2e96c7d754f9653be036c33c59, type: 3}
+  tank: {fileID: 78601200539245016, guid: ea5fe2923dfa9744880483452367671e, type: 3}
+  bomb: {fileID: 78601200539245016, guid: ed7ad31f2be38ed42ad0bc2e259c5da5, type: 3}
   end: 0
+  Points: {fileID: 1157434193}
+  Message: {fileID: 1199593427}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +530,7 @@ GameObject:
   - component: {fileID: 1157434196}
   - component: {fileID: 1157434195}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -607,7 +608,7 @@ GameObject:
   - component: {fileID: 1199593430}
   - component: {fileID: 1199593429}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -673,3 +674,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199593427}
   m_CullTransparentMesh: 0
+--- !u!1 &1739372274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 78601200539245016, guid: 699230ce287784742ae7b8732e750124,
+    type: 3}
+  m_PrefabInstance: {fileID: 1025795392}
+  m_PrefabAsset: {fileID: 0}

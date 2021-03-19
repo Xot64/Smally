@@ -2,33 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SCR_FootSoldier : MonoBehaviour
+public class SCR_Zombie : SCR_Enemy
 {
     public float attackPeriod;
     float lastAttack;
     public Collider2D target;
-    public float power;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-        if (GameObject.Find("Area").GetComponent<SCR_Area>().spawn)
+        base.Update();
+        if (enable)
         {
             if ((target) && (Time.time > lastAttack + attackPeriod))
             {
-                target.GetComponent<SET_Params>().Damage(GetComponent<SET_Params>().power);
+                target.GetComponent<SCR_Player>().Damage(power);
                 lastAttack = Time.time;
             }
         }
         else
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            Stop();
         }
     }
 
@@ -37,7 +37,7 @@ public class SCR_FootSoldier : MonoBehaviour
         if (other.tag == "Player")
         {
             target = other;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            Stop();
         }
     }
 }

@@ -25,8 +25,8 @@ public class SCR_Start : MonoBehaviour
             LoadPar(enemy1, "T");
             LoadPar(enemy2, "Z");
             LoadPar(enemy3, "B");
-            GameObject.Find("Health_P").GetComponent<InputField>().text = player.GetComponent<SET_Params>().health.ToString();
-            GameObject.Find("Power_P").GetComponent<InputField>().text = player.GetComponent<SET_Params>().power.ToString();
+            GameObject.Find("Health_P").GetComponent<InputField>().text = player.GetComponent<SCR_Player>().health.ToString();
+            GameObject.Find("Power_P").GetComponent<InputField>().text = player.GetComponent<SCR_Player>().power.ToString();
             GameObject.Find("Points_P").GetComponent<InputField>().text = player.GetComponent<SCR_Player>().winPoint.ToString();
         }
         
@@ -38,7 +38,7 @@ public class SCR_Start : MonoBehaviour
         SavePar(enemy1, "T");
         SavePar(enemy2, "Z");
         SavePar(enemy3, "B");
-        player.GetComponent<SET_Params>().point = 0.0f;
+        player.GetComponent<SCR_Player>().point = 0.0f;
         player.GetComponent<SCR_Player>().winPoint = F2F("Points_P");
         //Application.LoadLevel("Game");
         SceneManager.LoadScene("Game");
@@ -55,16 +55,16 @@ public class SCR_Start : MonoBehaviour
     }
      private void SavePar (GameObject obj, string c)
     {
-        obj.GetComponent<SET_Params>().health = F2F("Health_" + c);
-        obj.GetComponent<SET_Params>().speed = F2F("Speed_" + c);
-        obj.GetComponent<SET_Params>().power = F2F("Power_" + c);
-        obj.GetComponent<SET_Params>().point = F2F("Points_" + c);
+        obj.GetComponent<SCR_Character>().health = F2F("Health_" + c);
+        obj.GetComponent<SCR_Character>().speed = F2F("Speed_" + c);
+        obj.GetComponent<SCR_Character>().power = F2F("Power_" + c);
+        obj.GetComponent<SCR_Character>().point = F2F("Points_" + c);
     }
     private void LoadPar(GameObject obj, string c)
     {
-        GameObject.Find("Health_" + c).GetComponent<InputField>().text = obj.GetComponent<SET_Params>().health.ToString();
-        GameObject.Find("Speed_" + c).GetComponent<InputField>().text = obj.GetComponent<SET_Params>().speed.ToString();
-        GameObject.Find("Power_" + c).GetComponent<InputField>().text = obj.GetComponent<SET_Params>().power.ToString();
-        GameObject.Find("Points_" + c).GetComponent<InputField>().text = obj.GetComponent<SET_Params>().point.ToString();
+        GameObject.Find("Health_" + c).GetComponent<InputField>().text = obj.GetComponent<SCR_Character>().health.ToString();
+        GameObject.Find("Speed_" + c).GetComponent<InputField>().text = obj.GetComponent<SCR_Character>().speed.ToString();
+        GameObject.Find("Power_" + c).GetComponent<InputField>().text = obj.GetComponent<SCR_Character>().power.ToString();
+        GameObject.Find("Points_" + c).GetComponent<InputField>().text = obj.GetComponent<SCR_Character>().point.ToString();
     }
 }
