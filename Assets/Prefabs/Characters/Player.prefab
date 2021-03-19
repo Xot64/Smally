@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6789179033970204740}
-  - component: {fileID: 4458238486995532142}
   - component: {fileID: 8397346918681923670}
   - component: {fileID: 2936280657213218343}
   - component: {fileID: 5044959705365690410}
@@ -36,26 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4458238486995532142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 78601200539245016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec7e4527d9e2864ebf45733379020ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 500
-  speed: 0
-  power: 50
-  point: 0
-  hp: 0
-  angle: 0
-  Heart: {fileID: 7243539246179855488}
-  Body: {fileID: 8166124875549561776}
 --- !u!114 &8397346918681923670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,12 +47,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9881f5ea3865d489db23508f7ba9ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 300
+  speed: 0
+  power: 50
+  point: 0
+  hp: 0
+  angle: 0
+  Heart: {fileID: 7243539246179855488}
+  Body: {fileID: 8166124875549561776}
+  enable: 0
+  area: {fileID: 0}
   shootPeriod: 0.5
   shootSpeed: 7
   arrow: {fileID: 8545070656383136880, guid: cd6b8097ffedd5d41892445aa5c67c0e, type: 3}
   winPoint: 200
-  text: {fileID: 0}
-  text1: {fileID: 0}
 --- !u!58 &2936280657213218343
 CircleCollider2D:
   m_ObjectHideFlags: 0

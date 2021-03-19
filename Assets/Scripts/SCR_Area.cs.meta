@@ -3,7 +3,13 @@ guid: 3e50e1c0cae56914dac18a2dad393c24
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {fileID: 78601200539245016, guid: 699230ce287784742ae7b8732e750124, type: 3}
+  - zombie: {fileID: 78601200539245016, guid: 60c5ee2e96c7d754f9653be036c33c59, type: 3}
+  - tank: {fileID: 78601200539245016, guid: ea5fe2923dfa9744880483452367671e, type: 3}
+  - bomb: {fileID: 78601200539245016, guid: ed7ad31f2be38ed42ad0bc2e259c5da5, type: 3}
+  - Points: {instanceID: 0}
+  - Message: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

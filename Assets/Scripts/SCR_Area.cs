@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class SCR_Area : MonoBehaviour
@@ -10,29 +11,36 @@ public class SCR_Area : MonoBehaviour
     float lastSpawn;
     float X, Y, C, K;
     public bool spawn;
-    public GameObject player;
-    public GameObject enemy1;
-    public GameObject enemy2;
-    public GameObject enemy3;
-    public GameObject Win;
-    public GameObject Dead;
+    public SCR_Player player;
+    public GameObject zombie;
+    public GameObject tank;
+    public GameObject bomb;
     public bool end;
-    float t;
+    public Text Points;
+    public Text Message;
+    public Text Health;
 
+    float t;
     // Start is called before the first frame update
     void Start()
     {
+
         end = false;
         spawn = true;
         X = 10; //10
         Y = 6; //6
         C = Mathf.Sqrt(X * X + Y * Y);
-    //    Instantiate(player, new Vector2(0, 0), Quaternion.identity);
+        Message.text = ""; 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (player)
+        {
+            Points.text = player.point.ToString() + "/" + player.winPoint.ToString();
+            if (player.point >= player.winPoint) showMSG(true);
+        }
         if ((Time.time >= lastSpawn + spawnPeriod) && (spawn))
         {
             int rndSpawn = Random.Range(0, 4);
@@ -70,21 +78,18 @@ public class SCR_Area : MonoBehaviour
             GameObject enemy;
             switch (rndSpawn)
             {
-                case 1:
-                    enemy = enemy1;
-                    break;
                 case 2:
-                    enemy = enemy2;
+                    enemy = tank;
                     break;
                 case 3:
-                    enemy = enemy3;
+                    enemy = bomb;
                     break;
                 default:
-                    enemy = enemy1;
+                    enemy = zombie;
                     break;
             }
             GameObject S = Instantiate(enemy, spawnPosition, Quaternion.identity);
-            S.GetComponent<SET_Params>().angle = 180 + angle;
+            S.GetComponent<SCR_Enemy>().angle = 180 + angle;
             lastSpawn = Time.time;   
         }
         if (!end) t = Time.time;
@@ -104,10 +109,20 @@ public class SCR_Area : MonoBehaviour
         spawn = false;
     }
 
-    public IEnumerator showMSG(bool win)
+    public void showMSG(bool win)
     {
-        GameObject S = Instantiate((win ? Win : Dead), GetComponent<Transform>().position, Quaternion.identity);
-        yield return new WaitForSeconds(3);
-        Destroy(S);
+        StopSpawn();
+        Health.text = "Dead";
+        if (win)
+        {
+            Message.color = Color.green;
+            Message.text = "!!!YOU ARE WIN!!!";
+        }
+        else
+        {
+            Message.color = Color.red;
+            Message.text = "!!!YOU LOSE!!!";
+        }
+       end = true;
     }
 }

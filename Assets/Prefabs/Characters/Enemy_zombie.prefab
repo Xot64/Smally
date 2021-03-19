@@ -9,9 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6789179033970204740}
-  - component: {fileID: 4458238486995532142}
-  - component: {fileID: 1256719191817973602}
-  - component: {fileID: 8622681102981424062}
+  - component: {fileID: 3702708754604310275}
   - component: {fileID: 2936280657213218343}
   - component: {fileID: 5044959705365690410}
   m_Layer: 0
@@ -37,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4458238486995532142
+--- !u!114 &3702708754604310275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,7 +44,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 78601200539245016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec7e4527d9e2864ebf45733379020ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 21496796e188e9a48b0f955d6b145adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
@@ -57,33 +55,10 @@ MonoBehaviour:
   angle: 0
   Heart: {fileID: 7243539246179855488}
   Body: {fileID: 8166124875549561776}
---- !u!114 &1256719191817973602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 78601200539245016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15fde3f0fe60fc84fa1458bfe0df55cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8622681102981424062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 78601200539245016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 402c47ca5c873194ebd609e68d3698c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackPeriod: 1
+  enable: 0
+  area: {fileID: 0}
+  attackPeriod: 0
   target: {fileID: 0}
-  power: 25
 --- !u!58 &2936280657213218343
 CircleCollider2D:
   m_ObjectHideFlags: 0
