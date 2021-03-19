@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SCR_Enemy : SCR_Character
+public abstract class SCR_Enemy : SCR_Character
 {
     public Vector3 velocity;
     // Start is called before the first frame update

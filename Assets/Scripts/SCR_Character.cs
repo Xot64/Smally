@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SCR_Character : MonoBehaviour
+public abstract class SCR_Character : MonoBehaviour
 {
     public float health;
     public float speed;

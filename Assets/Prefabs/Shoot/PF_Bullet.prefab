@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8266933362802571340}
   - component: {fileID: 6812955378008671201}
   - component: {fileID: 8734766508624007626}
-  - component: {fileID: -5105580126466698460}
   m_Layer: 0
   m_Name: PF_Bullet
   m_TagString: Enemy
@@ -113,8 +112,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b5abcb2667a564ebdab4b9bf7a7573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   speed: 5
+  power: 0
+  point: 0
+  hp: 0
   angle: 0
+  Heart: {fileID: 0}
+  Body: {fileID: 0}
+  enable: 0
+  area: {fileID: 0}
+  fromMe: 0
 --- !u!50 &8734766508624007626
 Rigidbody2D:
   serializedVersion: 4
@@ -136,18 +144,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-5105580126466698460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8545070656383136880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec7e4527d9e2864ebf45733379020ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  speed: 0
-  power: 0
