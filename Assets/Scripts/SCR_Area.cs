@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public class SCR_Area : MonoBehaviour
+public class SCR_Area : MonoBehaviour 
 {
     public float spawnPeriod;
     float lastSpawn;
@@ -115,7 +115,7 @@ public class SCR_Area : MonoBehaviour
         if (win)
         {
             Message.color = Color.green;
-            Message.text = "!!!YOU ARE WIN!!!";
+            Message.text = "!!!YOU WIN!!!";
         }
         else
         {

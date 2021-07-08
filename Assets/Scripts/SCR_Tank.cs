@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SCR_Tank : SCR_Enemy
 {
-    
 
     float startC;
     float X, Y;
